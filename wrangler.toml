@@ -1,0 +1,35 @@
+# Wrangler configuration for Cloudflare Pages
+name = "dw-eatery-tracker"
+type = "webpack"
+account_id = "$CLOUDFLARE_ACCOUNT_ID"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2023-01-01"
+
+[site]
+bucket = ".next"
+entry-point = ".next"
+
+[build]
+command = "npm run build"
+upload.format = "service-worker"
+
+[env.production]
+name = "dw-eatery-tracker-prod"
+route = "https://dw-eatery-tracker.pages.dev/*"
+
+[env.staging]
+name = "dw-eatery-tracker-staging"
+route = "https://staging.dw-eatery-tracker.pages.dev/*"
+
+# Configure Cloudflare D1 database
+[[d1_databases]]
+binding = "DB"
+database_name = "dw_eatery_tracker"
+database_id = "$CLOUDFLARE_D1_DATABASE_ID"
+
+# Configure Cloudflare R2 storage
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "dw-eatery-tracker-assets" 
