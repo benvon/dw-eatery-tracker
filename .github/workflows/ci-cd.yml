@@ -157,7 +157,7 @@ jobs:
   #       uses: github/codeql-action/analyze@v3
 
   build:
-    needs: [generate-version, code-quality, security-scan]
+    needs: [generate-version, code-quality]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
