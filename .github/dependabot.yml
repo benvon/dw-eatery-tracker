@@ -18,7 +18,7 @@ updates:
     open-pull-requests-limit: 10
     # Assign pull requests to specific reviewers
     reviewers:
-      - "$GITHUB_REPOSITORY_OWNER"
+      - "${{github.repository_owner}}"
     # Labels on pull requests for security and dependency updates
     labels:
       - "dependencies"
@@ -42,7 +42,7 @@ updates:
       day: "monday"
     open-pull-requests-limit: 10
     reviewers:
-      - "$GITHUB_REPOSITORY_OWNER"
+      - "${{github.repository_owner}}"
     labels:
       - "dependencies"
       - "automated-pr"
