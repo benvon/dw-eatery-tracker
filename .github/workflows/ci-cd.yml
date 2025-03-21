@@ -28,7 +28,7 @@ jobs:
             exit 0
           fi
           
-          if [[ "$BRANCH_NAME" == "dependabot/*" || "$BRANCH_NAME" == feature!/* || "$BRANCH_NAME" == feature/* || "$BRANCH_NAME" == chore/* || "$BRANCH_NAME" == fix/* || "$BRANCH_NAME" == bugfix/* ]]; then
+          if [[ "$BRANCH_NAME" == dependabot/* || "$BRANCH_NAME" == feature!/* || "$BRANCH_NAME" == feature/* || "$BRANCH_NAME" == chore/* || "$BRANCH_NAME" == fix/* || "$BRANCH_NAME" == bugfix/* ]]; then
             echo "Branch name is valid: $BRANCH_NAME"
             exit 0
           else
